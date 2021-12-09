@@ -122,6 +122,7 @@ class Rectangle:
 rec1 = Rectangle(5, 3)
 rec1.display()
 
+
 #Q9
 print('----------------------------------------------------------------\nQ9')
 
@@ -152,3 +153,33 @@ my_acc = BankAccount(1167, 'Ali Hosseinzadeh', 500000)
 my_acc.deposit(250000)
 my_acc.withdraw(100000)
 my_acc.display()
+
+
+#Q10
+print('----------------------------------------------------------------\nQ10')
+
+#approach 1
+class Flashcard:
+    def __init__(self, **dikt):
+        self.dict = dikt
+        
+    def get_words(self):
+        for word, meaning in self.dict.items():
+            print(word + ': ' + meaning)
+
+    @staticmethod
+    def take_word():
+        dictt = {}
+        while True:
+            word = input('Enter a word (or press 0 to exit): ')
+            if word == '0':
+                break
+            meaning = input('Enter its meaning : ')
+            dictt[word] = meaning
+            print('----------------------') 
+        return dictt
+
+
+dictt = Flashcard.take_word()
+f1 = Flashcard(**dictt)
+f1.get_words()
