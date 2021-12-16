@@ -147,4 +147,4 @@ str1 = "Emma25 is Data scientist50 and AI Expert"
 # scientist50
 ```
 
-Q18. Use defaultdict from collections module to count all occurence of alphabete in a statement.
+Q18. Use defaultdict from collections module to count all occurence of alphabet letters in a statement.
