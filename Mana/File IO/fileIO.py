@@ -94,9 +94,7 @@ with open("file.md", "a+") as file:
 from time import time
 
 class Catchtime:
-    # def __init__(self, description):
-    #     self.description = description
-    
+   
     def __enter__(self):
         self.start = time()      
     
