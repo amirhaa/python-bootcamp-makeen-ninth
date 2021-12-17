@@ -3,7 +3,7 @@ print('----------------------------------------------------------------\nQ1')
 
 lst1 = ['python', 'c++', 'java', 'Ruby']
 
-with open('newfile.txt', 'w') as f:
+with open('text_files/test0.txt', 'w') as f:
     for item in lst1:
         f.write(f'{item}\n')
 
@@ -18,7 +18,7 @@ def count_words(file):
     text = f.read().rstrip()
     return len(text.split())
 
-file_name = 'newfile.txt'
+file_name = 'text_files/test0.txt'
 with open(file_name) as f:
     print(count_words(file_name))
 
@@ -31,11 +31,11 @@ def clean(listt):         # removes extra symbols from sides of the word to have
     res = [word.strip('.():/\'`\\') for word in listt]
     return res
 
-with open('test2.txt') as f:
+with open('text_files/test2.txt') as f:
     text = f.read()
     lst = text.split()
-    lst = clean(lst)
-    res = sorted(lst, key=len)
+    lst = set(clean(lst))
+    res = sorted(lst, key=lambda x: (len(x), x))
     print(res[:-11:-1])
 
 
@@ -44,21 +44,21 @@ with open('test2.txt') as f:
 print('----------------------------------------------------------------\nQ4')
 
 res = []
-with open('test.txt') as f:
+with open('text_files/test1.txt') as f:
     text = f.read()
     for word in text.split():
         w_count = text.count(word)
         res.append((word, w_count))
 
-    print(res)
+    print(set(res))
 
 
 
 # Q5
 print('----------------------------------------------------------------\nQ5')
 
-file1 = 'test3.txt'
-file2 = 'test4.txt'
+file1 = 'text_files/test3.txt'
+file2 = 'text_files/test4.txt'
 with open(file1, 'a') as f1:
     with open(file2) as f2:
         for line in f2:
@@ -71,7 +71,7 @@ with open(file1, 'a') as f1:
 # Q6
 print('----------------------------------------------------------------\nQ6')
 
-with open('test.txt', 'r+') as f:
+with open('text_files/test6.txt', 'r+') as f:
 
     original_text = f.read()
     new_text = original_text.replace('\n', '')
@@ -81,12 +81,24 @@ with open('test.txt', 'r+') as f:
 
     f.write(new_text)
 
+    print('Done')
+
 
 
 # Q7
 print('----------------------------------------------------------------\nQ7')
 
-pass
+print('What would you like to add to your note (Enter "0" to leave or enter "display" to see the note) ?')
+while True:
+    line = input()             # Enter 0 to exit
+    if line.lower() == 'display':
+        with open('test5.md') as f:
+            print(f'\nYour note :\n{f.read()}\n\n')
+    elif str(line) == '0':
+        break
+    else:
+        with open('test5.md', 'a') as f:
+            f.write(f'{line}\n')
 
 
 
