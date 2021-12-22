@@ -19,5 +19,6 @@ for index, statement in enumerate(sm_list):
         sm_list.pop(index)
 
 sm_list.sort(key=len, reverse=True)
-print(sm_list)
+# print(sm_list)
 print(sm_list[:10])
+# (salam,)
