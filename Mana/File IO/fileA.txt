@@ -1,0 +1,3 @@
+This is file A 
+line one in file A 
+line two in file A
