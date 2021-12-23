@@ -1,3 +1,7 @@
+from datetime import datetime, timedelta
+from time import time
+
+
 # Q1
 print('----------------------------------------------------------------\nQ1')
 
@@ -105,18 +109,55 @@ while True:
 # Q8
 print('----------------------------------------------------------------\nQ8')
 
-pass
+class Catchtime:
+    def __enter__(self):
+        self.start = time()      
+    
+    def __exit__(self, *args):
+        self.end = time()
+        print(f'Total time: {self.end - self.start}')
+        
 
+with Catchtime() as t:
+    count = 10
+    for i in range(0, 10000000):
+        count += 5
 
 
 # Q9
 print('----------------------------------------------------------------\nQ9')
 
-pass
+try:
+    file = open('test8.txt', 'r')
+except FileNotFoundError as exc:
+    print(exc)
+    answer = input('Do you want to create this file [y/n] ? ')
+    if answer.lower().strip() == 'y' or answer.lower().strip() == 'yes':
+        file = open('text_files/test8.txt', 'w')
+        file.close()
+except Exception:
+    print('Error')   
+finally:
+    print('Done, Bye-bye...')
 
 
 
 # Q10
 print('----------------------------------------------------------------\nQ10')
 
-pass
+def del_milisec(time):
+    lst = str(time).split('.')
+    return lst[0]
+  
+
+with open('text_files/test7.txt', 'w+') as f:
+    dikt = {
+        'yesterday': datetime.now() - timedelta(1),
+        'today': datetime.now(),
+        'tomorrow':  datetime.now() + timedelta(1)
+    }
+
+    for k, v in dikt.items():
+        f.write(f'{k}: {del_milisec(v)}\n')
+    
+    print('Done')
