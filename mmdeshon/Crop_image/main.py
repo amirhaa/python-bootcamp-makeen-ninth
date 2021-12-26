@@ -1,6 +1,6 @@
 import os
 import datetime
-from os.path import exists
+# from os.path import exists
 from Resizer import ConvertToImage, ConvertToIcon
 
 
@@ -12,12 +12,12 @@ class PathGenerator:
         year = dt.year
         month = dt.month
         for directory in ['icons', 'images']:
-            if not exists(f'{directory}/{year}'):
+            if not os.path.exists(f'{directory}/{year}'):
                 os.mkdir(f'{directory}/{year}')
                 os.mkdir(f'{directory}/{year}/{month}')
 
-            elif exists(f'{directory}/{year}'):
-                if not exists(f'{directory}/{year}/{month}'):
+            elif os.path.exists(f'{directory}/{year}'):
+                if not os.path.exists(f'{directory}/{year}/{month}'):
                     os.mkdir(f'{directory}/{year}/{month}')
         return f'{year}/{month}'
 
