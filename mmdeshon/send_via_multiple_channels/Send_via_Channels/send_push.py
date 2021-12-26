@@ -20,7 +20,7 @@ def push_notification():
     data = {
         'app_ids': APP_ID,
         'data': {
-            'title': f'Qrcode for {newest_user["name"]}',
+            'title': f'credentials of "{newest_user["name"]}"',
             'content': f"name: {newest_user['name']}\n email: {newest_user['email']}"
          }
     }
