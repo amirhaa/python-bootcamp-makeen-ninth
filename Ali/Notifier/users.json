@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "name": "Ali",
+            "email": "ali@gmail.com",
+            "phone_number": "76543",
+            "device_id": "asdug4uh43"
+        },
+        {
+            "name": "Aliiiii",
+            "email": "ali@gmail.commmm",
+            "phone_number": "765433333",
+            "device_id": "asdug4uh43aaaa"
+        },
+        {
+            "name": "mamad",
+            "email": "iahskudgejaf",
+            "phone_number": "234657",
+            "device_id": "wef7adf"
+        },
+        {
+            "name": "amir",
+            "email": "amir@gmail,com",
+            "phone_number": "124325",
+            "device_id": "hfu3ih13er"
+        }
+    ]
+}
