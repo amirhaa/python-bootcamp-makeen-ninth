@@ -5,14 +5,14 @@ import os
 from dotenv import load_dotenv, dotenv_values
 
 load_dotenv('data.env')
+data = dotenv_values('data.env')
+APP_ID = os.environ.get('APP_ID')
+AUTH_KEY = os.environ.get('AUTH_KEY')
+PUSH_URL = os.environ.get('PUSH_URL')
+headers = {'Authorization': f'Token {AUTH_KEY}'}
 
 class Notification:
-    data = dotenv_values('data.env')
-    APP_ID = os.environ.get('APP_ID')
-    AUTH_KEY = os.environ.get('AUTH_KEY')
-    PUSH_URL = os.environ.get('PUSH_URL')
-    headers = {'Authorization': f'Token {AUTH_KEY}'}
-
+    
     def __init__(self):
         pass
 
