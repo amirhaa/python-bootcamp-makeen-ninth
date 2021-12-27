@@ -1,7 +1,6 @@
 from MakeUser import *
 from load_from_json import load_json
 import requests
-from random import randint
 import os
 from dotenv import load_dotenv, dotenv_values
 
@@ -12,7 +11,6 @@ class Notification:
     APP_ID = os.environ.get('APP_ID')
     AUTH_KEY = os.environ.get('AUTH_KEY')
     PUSH_URL = os.environ.get('PUSH_URL')
-    UPLOAD_URL = os.environ.get('UPLOAD_URL')
     headers = {'Authorization': f'Token {AUTH_KEY}'}
 
     def __init__(self):
