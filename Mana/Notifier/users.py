@@ -16,11 +16,18 @@ class Users:
 
         with open('users.json', 'r+') as json_file:
     
+            data = {'users': []}
+            if json.load(json_file) == '':
+
+                json.dump(data, json_file)
+                
             data = json.load(json_file)
             info = {'name': self.name, 'email': self.email, "phone number": self.phone_number, "device id": self.device_id}
             data['users'].append(info)
             json_file.seek(0)
             json.dump(data, json_file)
+            info = {'name': self.name, 'email': self.email, "phone number": self.phone_number, "device id": self.device_id}
+            
 
     def get_info(self, sth):
         

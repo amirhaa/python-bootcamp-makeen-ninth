@@ -1,15 +1,18 @@
 from PIL import Image
 import os
 import string
-import datetime
+from datetime import date, datetime
 import random
 
 
 class BaseImage:
     def __init__(self, image_name):
         self.image_name = image_name
-        self.year = str(datetime.datetime.now().year)
-        self.month = str(datetime.datetime.now().month)
+
+        now = datetime.now()
+        self.year = str(now.year)
+        self.month = str(now.month)
+        
         self.random_ch = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(6))
 
 

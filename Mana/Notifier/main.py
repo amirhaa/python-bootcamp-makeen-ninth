@@ -30,7 +30,7 @@ if __name__ == '__main__':
         if user:
             device_id = user['device id']
             obj = Channel()
-            obj.send_push_notification(device_id)
+            obj.send_push_notification(device_id, 'somethiing')
         else:
             print('User does not exist')
 
