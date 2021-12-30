@@ -168,7 +168,7 @@ class Flashcard:
             print(word + ': ' + meaning)
 
     @staticmethod
-    def take_word():
+    def take_words():
         dictt = {}
         while True:
             word = input('Enter a word (or press 0 to exit): ')
@@ -180,6 +180,22 @@ class Flashcard:
         return dictt
 
 
-dictt = Flashcard.take_word()
+dictt = Flashcard.take_words()
 f1 = Flashcard(**dictt)
 f1.get_words()
+
+
+# #approach 2
+# class Flashcard:
+#     def __init__(self, word, meaning):
+#         self.flash_card = {}
+#         self.flash_card[word] = meaning
+#         # self.flash_card.update({word: meaning})
+
+#     def get_words(self):
+#         for word, meaning in self.flash_card.items():
+#             print(word + ': ' + meaning)
+
+# word, meaning = input('Enter a word and its meaning (sepreted by space): ').split()
+# f1 = Flashcard(word, meaning)
+# f1.get_words()
